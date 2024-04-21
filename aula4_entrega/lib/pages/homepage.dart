@@ -6,9 +6,19 @@ class HomePage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
+        title: const Text(
+          "Home Page",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white
+          ),
+        ),
+        centerTitle: true,
         backgroundColor: Colors.redAccent,
-        leading: const Icon(Icons.menu),
+        leading: const Icon(
+          Icons.menu, 
+          color: Colors.white,
+        ),
       ),
       body: Center(
         child: Column(

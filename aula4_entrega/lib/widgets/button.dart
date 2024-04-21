@@ -28,7 +28,8 @@ class StyledButton extends StatelessWidget{
           title,
           style: const TextStyle(
             fontSize: 16,
-            fontWeight: FontWeight.bold
+            fontWeight: FontWeight.bold,
+            color: Colors.white
           ),
         ),
       ),
