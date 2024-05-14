@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsividade/widgets/listing.dart';
 import 'package:responsividade/widgets/star.dart';
 import 'package:responsividade/widgets/text_input.dart';
 
@@ -89,6 +90,7 @@ class DesktopLayout extends StatelessWidget{
                         children: [
                           Text(
                             "Aprenda flutter no seu tempo",
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -98,6 +100,7 @@ class DesktopLayout extends StatelessWidget{
                           SizedBox(height: 8),
                           Text(
                             "Bora aprender Flutter! Cursos por apenas 22,90. Qualidade garantida",
+                            textAlign: TextAlign.justify,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16
@@ -128,6 +131,20 @@ class DesktopLayout extends StatelessWidget{
                   upperText: "+45.000 alunos",
                   lowerText: "Didática garantida"                ),
               ],
+            ),
+            const SizedBox(height: 16),
+            Flexible(
+              fit: FlexFit.loose,
+              child: SizedBox(
+                width: double.infinity,
+                height: double.infinity,
+                child: GridView.extent(
+                  maxCrossAxisExtent: 300,
+                  children: [
+                    for (int i = 0; i < 20; i++) const Listing()
+                  ],
+                ),
+              ),
             )
           ]
         ),

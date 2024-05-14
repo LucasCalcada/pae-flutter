@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:responsividade/widgets/listing.dart';
 import 'package:responsividade/widgets/star.dart';
 import 'package:responsividade/widgets/text_input.dart';
 
@@ -73,7 +74,6 @@ class MobileLayout extends StatelessWidget{
                     SizedBox(height: 8),
                     AutoSizeText(
                       "Bora aprender Flutter! Cursos por apenas R\$ 22,90. Qualidade Garantida!",
-                      textAlign: TextAlign.left,
                       style: TextStyle(
                         color: Colors.white,
                       ),
@@ -101,6 +101,20 @@ class MobileLayout extends StatelessWidget{
                   ],
                 ),
               ),
+              const SizedBox(height: 16),
+              Flexible(
+                fit: FlexFit.loose,
+                child: SizedBox(
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: GridView.extent(
+                    maxCrossAxisExtent: 300,
+                    children: [
+                      for (int i = 0; i < 20; i++) const Listing()
+                    ],
+                  ),
+                )
+              )
             ],
           ),
         )

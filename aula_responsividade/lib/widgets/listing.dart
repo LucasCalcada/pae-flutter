@@ -6,15 +6,38 @@ class Listing extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Image(
-          image: AssetImage("HoldingPhone.jpg"),
-        ),
-        AutoSizeText("Criação de Apps Android e iOS com Flutter - Crie 16 Apps"),
-        AutoSizeText("R\$22,90")
-      ],
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Flexible(
+            child: SizedBox(
+              width: double.infinity,
+              height: double.infinity,
+              child: Image(
+                image: AssetImage("HoldingPhone.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          AutoSizeText(
+            "Criação de Apps Android e iOS com Flutter - Crie 16 Apps",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 14.0
+            ),
+          ),
+          AutoSizeText(
+            "R\$22,90",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 12.0
+            ),
+            textAlign: TextAlign.start,
+          )
+        ],
+      ),
     );
   }
 
